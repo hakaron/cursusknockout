@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Werknemers</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Werknemers</h1>
+    <dl>
+        <dt>Voornaam</dt>
+        <dd data-bind="text: voornaam"></dd>
+        <dt>Familienaam</dt>
+        <dd data-bind="text: familienaam"></dd>
+        <dt>Wedde</dt>
+        <dd data-bind="text: wedde, css: {groteWedde: wedde>=7000, kleineWedde: wedde<5000}"></dd>
+    </dl>
+    <img id="embleem" data-bind="attr: {src: 'images/'+auto()+'.png', alt:auto()}">
+    <button data-bind="enable: wedde < 10000">Opslag</button>
+    <button data-bind="click:nettoWedde">Netto wedde</button>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
