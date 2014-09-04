@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>BMI</h1>
+    <dl>
+        <dt>Lengte</dt>
+        <dd data-bind="text: lengte()"></dd>
+        <dt>Gewicht</dt>
+        <dd data-bind="text: gewicht()"></dd>
+        <dt>BMI</dt>
+        <dd data-bind="text: bmi()+': '+boodschap()"></dd>
+    <button data-bind="click: lichter">1 kg lichter</button>
+    <button data-bind="click: zwaarder">1 kg zwaarder</button>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="bmi.js"></script>
+</body>
+</html>

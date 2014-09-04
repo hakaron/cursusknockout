@@ -13,10 +13,10 @@
         <dt>Familienaam</dt>
         <dd data-bind="text: familienaam"></dd>
         <dt>Wedde</dt>
-        <dd data-bind="text: wedde, css: {groteWedde: wedde>=7000, kleineWedde: wedde<5000}"></dd>
+        <dd data-bind="text: wedde(), css: {groteWedde: wedde()>=7000, kleineWedde: wedde()<5000}"></dd>
     </dl>
     <img id="embleem" data-bind="attr: {src: 'images/'+auto()+'.png', alt:auto()}">
-    <button data-bind="enable: wedde < 10000">Opslag</button>
+    <button data-bind="enable: wedde() < 10000, click:opslag">Opslag</button>
     <button data-bind="click:nettoWedde">Netto wedde</button>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
