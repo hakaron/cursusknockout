@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>Conversie</h1>
-    <label>Afstand:<input data-bind="value:afstand, valueUpdate:'keyup'" /></label>
+    <label>Afstand:<input type="number" data-bind="value:afstand, valueUpdate:'keyup'" /></label>
     <div>
         <label><input type="radio" name="soort" value="CI" data-bind="checked:soort" />Centimeters naar inches</label>
     </div>
     <div>
         <label><input type="radio" name="soort" value="IC" data-bind="checked: soort" />Inches naar centimeters</label>
     </div>
-    <h2 data-bind="visible: afstand() != undefined && afstand() > 0">Geconverteerde afstand: <span data-bind="text:converteren()"></span></h2>
+    <h2>Geconverteerde afstand: <span data-bind="text:converteren()"></span></h2>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
     <script src="conversie.js"></script>
