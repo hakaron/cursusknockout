@@ -9,12 +9,18 @@
     <h1>Werknemers</h1>
     <dl>
         <dt>Voornaam</dt>
-        <dd data-bind="text: voornaam"></dd>
+        <dd data-bind="text: voornaam()"></dd>
         <dt>Familienaam</dt>
-        <dd data-bind="text: familienaam"></dd>
+        <dd data-bind="text: familienaam()"></dd>
         <dt>Wedde</dt>
         <dd data-bind="text: wedde(), css: {groteWedde: wedde()>=7000, kleineWedde: wedde()<5000}"></dd>
     </dl>
+    <label>Voornaam:
+        <input data-bind="value: voornaam, valueUpdate: 'keyup'">
+    </label>
+    <label>Familienaam:
+        <input data-bind="value: familienaam, valueUpdate: 'keyup'">
+    </label>
     <img id="embleem" data-bind="attr: {src: 'images/'+auto()+'.png', alt:auto()}">
     <button data-bind="enable: wedde() < 10000, click:opslag">Opslag</button>
     <button data-bind="click:nettoWedde">Netto wedde</button>

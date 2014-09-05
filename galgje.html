@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Galgje</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Galgje</h1>
+    <dl>
+        <dt>Te raden saus: <span data-bind="text: weergave()" /></dt>
+        <dt>Letter</dt>
+        <dt><input id="letter" type="text" size="1" maxlength="1" /></dt>
+        <dt><button data-bind="click: raden">Raden</button></dt>
+    </dl>
+    <img id="galg" data-bind="attr: { src: 'images/' + pogingen() + '.png', alt: 'galgje' }">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="galgje.js"></script>
+</body>
+</html>

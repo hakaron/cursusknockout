@@ -1,4 +1,7 @@
-﻿var viewModel = { voornaam: "Jean", familienaam: "Smits", wedde: ko.observable(2500),
+﻿var viewModel = {
+    voornaam: ko.observable("Jean"),
+    familienaam: ko.observable("Smits"),
+    wedde: ko.observable(2500),
     nettoWedde: function () {
         alert(this.wedde() / 2);
     },
