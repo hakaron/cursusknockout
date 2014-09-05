@@ -12,9 +12,6 @@ var viewModel = {
     dag: ko.observable(),
     maand: ko.observable(),
     sterrenbeeld: function () {
-        if (this.maand > 12 || this.maand < 1) {
-            return 'error';
-        }
         switch (this.maand()) {
             case 1:
                 return this.dag() <= 20 ? 'steenbok' : 'waterman';
@@ -40,8 +37,6 @@ var viewModel = {
                 return this.dag() <= 22 ? 'schorpioen' : 'boogschutter';
             case 12:
                 return this.dag() <= 21 ? 'boogschutter' : 'steenbok';
-            default:
-                return 'error';
         }
     }
 };
