@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindroom</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Palindroom</h1>
+    <label>Woord:
+        <input data-bind="value: woord, valueUpdate: 'keyup'">
+    </label>
+    <div>
+        <label><input type="checkbox" data-bind="checked: caseSensitive" />Hoofdlettergevoelig</label>
+    </div>
+    <h2 data-bind="visible: woord().lengte !== 0">Dit is <span data-bind="text:palindroom() ? 'een' : 'geen'"></span> palindroom</h2>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="palindroom.js"></script>
+</body>
+</html>
