@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Sterrenbeelden</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Sterrenbeelden</h1>
+    <label>Dag:<select id="cmbDag" data-bind="options: dagen, value: dag, optionsCaption: 'Maak een keuze'"></select></label> <br />
+    <label>Maand:<select id="cmbMaand" data-bind="options: maanden, value: maand, optionsCaption: 'Maak een keuze'"></select></label>
+    <div data-bind="visible: dag() != 0 && maand() != 0 && sterrenbeeld() != 'error'">
+        <h3 data-bind="text: sterrenbeeld()"></h3>
+        <img id="sterrenbeeld" data-bind="attr: { src: 'images/' + sterrenbeeld() + '.png', alt: sterrenbeeld() }" />
+    </div>
+    <label>Dag: <span data-bind="text:dag()"></span> <br />Maand: <span data-bind="text:maand()"></span></label>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="sterrenbeelden.js"></script>
+</body>
+</html>

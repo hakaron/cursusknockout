@@ -16,6 +16,8 @@
         <dd data-bind="text: wedde(), css: {groteWedde: wedde()>=7000, kleineWedde: wedde()<5000}"></dd>
         <dt>Gehuwd</dt>
         <dd data-bind="text:gehuwd() ? 'ja' : 'nee'"></dd>
+        <dt>Rijbewijs</dt>
+        <dd data-bind="text:rijbewijs()"></dd>
     </dl>
     <label>Voornaam:
         <input data-bind="value: voornaam, valueUpdate: 'keyup'">
@@ -26,6 +28,7 @@
     <div>
         <label><input type="checkbox" data-bind="checked:gehuwd" />Gehuwd</label>
     </div>
+    <label>Rijbewijs <select data-bind="options:rijbewijzen, value:rijbewijs, optionsCaption:'Maak een keuze'"/></label>
     <img id="embleem" data-bind="attr: {src: 'images/'+auto()+'.png', alt:auto()}">
     <button data-bind="enable: wedde() < 10000, click:opslag">Opslag</button>
     <button data-bind="click:nettoWedde">Netto wedde</button>
