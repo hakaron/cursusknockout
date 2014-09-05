@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Werelddelen</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Werelddelen</h1>
+    <ul data-bind="foreach:werelddelen">
+        <li>
+            <span data-bind="text: naam"></span>
+            <a href="#" data-bind="click:$root.detail">Detail</a>
+        </li>
+    </ul>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="werelddelen.js"></script>
+</body>
+</html>
