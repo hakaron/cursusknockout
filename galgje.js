@@ -25,7 +25,6 @@ function nieuweWeergave () {
 var viewModel = {
     pogingen: ko.observable(0),
     weergave: ko.observable(nieuweWeergave()),
-    gameOver: false,
     raden: function () {
         if (!gameOver) {
             var ingave = document.getElementById('letter').value;
