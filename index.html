@@ -18,6 +18,13 @@
         <dd data-bind="text:gehuwd() ? 'ja' : 'nee'"></dd>
         <dt>Rijbewijs</dt>
         <dd data-bind="text:rijbewijs()"></dd>
+        <dt>Provincie</dt>
+        <dd data-bind="with:provincie()">
+            <span data-bind="text:naam"></span>:
+            <span data-bind="text:hoofdstad"></span>
+        </dd>
+        <dt>Geslacht</dt>
+        <dd data-bind="text:geslacht() === 'M' ? 'Man' : 'Vrouw'"></dd>
     </dl>
     <label>Voornaam:
         <input data-bind="value: voornaam, valueUpdate: 'keyup'">
@@ -28,7 +35,14 @@
     <div>
         <label><input type="checkbox" data-bind="checked:gehuwd" />Gehuwd</label>
     </div>
-    <label>Rijbewijs <select data-bind="options:rijbewijzen, value:rijbewijs, optionsCaption:'Maak een keuze'"/></label>
+    <label>Rijbewijs <select data-bind="options:rijbewijzen, value:rijbewijs, optionsCaption:'Maak een keuze'"></select></label>
+    <label>Provincie<select data-bind="options:provincies, optionsText:'naam', value: provincie, optionsCaption:'Maak een keuze'"></select></label>
+    <div>
+        <label><input type="radio" name="geslacht" value="M" data-bind="checked:geslacht" />Man</label>
+    </div>
+    <div>
+        <label><input type="radio" name="geslacht" value="V" data-bind="checked: geslacht" />Vrouw</label>
+    </div>
     <img id="embleem" data-bind="attr: {src: 'images/'+auto()+'.png', alt:auto()}">
     <button data-bind="enable: wedde() < 10000, click:opslag">Opslag</button>
     <button data-bind="click:nettoWedde">Netto wedde</button>
