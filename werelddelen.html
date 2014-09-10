@@ -17,6 +17,12 @@
         style="display:none">
         <dt>Naam</dt><dd data-bind="text:naam"></dd>
         <dt>Oppervlakte</dt><dd data-bind="text:oppervlakte"></dd>
+        <dt>Landen</dt>
+        <dd>
+            <ul data-bind="foreach: landen">
+                <li data-bind="text: $data"></li>
+            </ul>
+        </dd>
     </dl>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>

@@ -12,7 +12,7 @@
             <span data-bind="text: naam, click: $root.detail" style="cursor:pointer"></span>
         </li>
     </ul>
-    <div data-bind="with: gekozenFruit(), visible: gekozenFruit !== undefined"
+    <div data-bind="with: gekozenFruit(), visible: gekozenFruit() !== undefined"
         style="display:none">
         <img data-bind="attr: { src: 'images/' + naam + '.jpg', alt: naam, title: calorie + ' kilocalorie&euml;n' }" />
     </div>

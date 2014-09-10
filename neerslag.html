@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Neerslag</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Neerslag</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Dag</th>
+                <th>Neerslag</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:dagen">
+            <tr>
+                <td data-bind="text:naam"></td>
+                <td><input data-bind="value:neerslag" type="number" /></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Gemiddelde</td>
+                <td data-bind="text:gemiddelde()"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="neerslag.js"></script>
+</body>
+</html>
