@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Frituur</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Frituur</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Product</td>
+                <th>Prijs</th>
+                <th>Aantal</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: bestelling()">
+            <tr>
+                <td><select data-bind="options: viewModel.producten, value: product, optionsText:'naam', optionsCaption: 'Kies een product'" /></td>
+                <td data-bind="with: product"><span data-bind="    text: prijs"></span></td>
+                <td><input type="text" data-bind="value: aantal"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" data-bind="text: totaal()"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <button data-bind="click: toevoegen">Toevoegen</button>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="frituur.js"></script>
+</body>
+</html>
