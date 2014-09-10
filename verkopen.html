@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Verkopen</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Verkopen</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Seizoen</th>
+                <th>Verkoop</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: verkopen">
+            <tr>
+                <td data-bind="text: seizoen"></td>
+                <td><input data-bind="value: verkoop" type="number" /></td>
+                <td><img src="images/grafiek.png" height="15"
+                    data-bind="attr: {width : percentage() * 2}">
+                    <span data-bind="text: '&nbsp;' + percentage() + '%'"></span></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Totaal</td>
+                <td data-bind="text: totaal()"></td>
+                <td><img src="images/grafiek.png" width="200" height="15">&nbsp;100%</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="verkopen.js"></script>
+</body>
+</html>
