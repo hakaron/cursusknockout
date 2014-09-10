@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <link rel="stylesheet" href="default.css">
+    <style>
+        .afgewerkt {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Omschrijving</td>
+                <th>Afgewerkt</th>
+                <th>Verwijderen</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:todos()">
+            <tr>
+                <td><input data-bind="value: omschrijving, css: { afgewerkt: afgewerkt }" /></td>
+                <td><input data-bind="checked:afgewerkt" type="checkbox" /></td>
+                <td>
+                    <img src="images/cross.png" data-bind="click:$root.verwijderen"
+                        alt="Verwijderen" title="Verwijder todo item" />
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" data-bind="text:todos().length + ' todo(s)'"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <button data-bind="click:toevoegen">Toevoegen</button>
+    <button data-bind="click:afgewerkteVerwijderen">Afgewerkte todo(s) verwijderen</button>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="todo.js"></script>
+</body>
+</html>
