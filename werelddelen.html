@@ -13,6 +13,11 @@
             <a href="#" data-bind="click:$root.detail">Detail</a>
         </li>
     </ul>
+    <dl data-bind="with:gekozenWerelddeel(), visible: gekozenWerelddeel !== undefined"
+        style="display:none">
+        <dt>Naam</dt><dd data-bind="text:naam"></dd>
+        <dt>Oppervlakte</dt><dd data-bind="text:oppervlakte"></dd>
+    </dl>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
     <script src="werelddelen.js"></script>
