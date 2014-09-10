@@ -15,6 +15,7 @@
             }),
             aantal: ko.observable(1)
         });
+        document.querySelector("tbody tr:last-child td:first-child select").focus();
     },
     totaal: function () {
         var totaal = 0;

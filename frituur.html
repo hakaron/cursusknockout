@@ -18,8 +18,8 @@
         <tbody data-bind="foreach: bestelling()">
             <tr>
                 <td><select data-bind="options: viewModel.producten, value: product, optionsText:'naam', optionsCaption: 'Kies een product'" /></td>
-                <td data-bind="with: product"><span data-bind="    text: prijs"></span></td>
-                <td><input type="text" data-bind="value: aantal"></td>
+                <td data-bind="with: product"><span data-bind="text: prijs"></span></td>
+                <td><input type="number" data-bind="value: aantal"></td>
             </tr>
         </tbody>
         <tfoot>
