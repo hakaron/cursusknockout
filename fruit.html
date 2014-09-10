@@ -1,9 +1,23 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!doctype html>
+<html lang="nl">
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <title>Fruit</title>
+    <link rel="stylesheet" href="default.css">
 </head>
 <body>
-
+    <h1>Fruit</h1>
+    <ul data-bind="foreach: fruitsoorten">
+        <li>
+            <span data-bind="text: naam, click: $root.detail" style="cursor:pointer"></span>
+        </li>
+    </ul>
+    <div data-bind="with: gekozenFruit(), visible: gekozenFruit !== undefined"
+        style="display:none">
+        <img data-bind="attr: { src: 'images/' + naam + '.jpg', alt: naam, title: calorie + ' kilocalorie&euml;n' }" />
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="fruit.js"></script>
 </body>
 </html>
