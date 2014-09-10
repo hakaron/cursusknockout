@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Verjaardagen</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Verjaardagen</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Naam</td>
+                <th>Dag</th>
+                <th>Maand</th>
+                <th>Vandaag jarig</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:verjaardagen()">
+            <tr>
+                <td><input data-bind="text:naam" type="text" /></td>
+                <td><select data-bind="value:dag, options:viewModel.dagen"></select></td>
+                <td><select data-bind="value:maand, options:viewModel.maanden"></select></td>
+                <td><span data-bind="text: viewModel.jarig(dag, maand)"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <button data-bind="click: toevoegen">Toevoegen</button>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="frituur.js"></script>
+</body>
+</html>
