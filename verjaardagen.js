@@ -14,14 +14,17 @@ var viewModel = {
     maanden: maandrij,
     toevoegen: function () {
         var verjaardag = {
-            naam: ko.observable(), dag: ko.observable(1), maand: ko.observable(1)
+            naam: ko.observable(''), dag: ko.observable(1), maand: ko.observable(1)
         };
+        verjaardag.naam.subscribe(function () { opslaan(); });
+        verjaardag.dag.subscribe(function () { opslaan() });
+        verjaardag.maand.subscribe(function () { opslaan() });
         this.verjaardagen.push(verjaardag);
         document.querySelector("tbody tr:last-child td:first-child input").focus();
     },
     jarig: function(dag, maand) {
-        var dezeMaand = new Date().getMonth();
-        var dezeDag = new Date().getDay();
+        var dezeMaand = new Date().getMonth() + 1; //januari is blijkbaar maand 0
+        var dezeDag = new Date().getDate();
         return dezeDag == dag && dezeMaand == maand;
     }
 };
