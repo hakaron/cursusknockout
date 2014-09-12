@@ -11,7 +11,7 @@
     <script id="personeel" type="text/html">
         <ul data-bind="foreach:personeel">
             <li>
-                <a href="#" data-bind="click:$root.detail">
+                <a data-bind="attr: { href: '#personeel/' + nummer }">
                     <span data-bind="text: voornaam + ' ' + familienaam"></span>
                 </a>
             </li>
@@ -29,10 +29,12 @@
                 <dt data-bind="text:job"></dt>
             </dl>
         </div>
-        <a href="#" data-bind="click:toonPersoneel">Terug naar lijst</a>
+        <a href="#">Terug naar lijst</a>
     </script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js"></script>
     <script src="personeel.js"></script>
 </body>
 </html>
