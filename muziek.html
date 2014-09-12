@@ -9,7 +9,7 @@
     <h1>Muziek</h1>
     <h2>Genres</h2>
     <ul data-bind="foreach:genres">
-        <li><a href="#" data-bind="text:naam, click:$root.kiesGenre"></a></li>
+        <li><a data-bind="text:naam, attr:{href: '#genres/' + nummer}"></a></li>
     </ul>
     <h2 data-bind="with:genre()"><span data-bind="text:naam"></span></h2>
     <ul data-bind="foreach:artiesten">
@@ -17,6 +17,8 @@
     </ul>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js"></script>
     <script src="muziek.js"></script>
 </body>
 </html>
