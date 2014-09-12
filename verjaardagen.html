@@ -18,16 +18,16 @@
         </thead>
         <tbody data-bind="foreach:verjaardagen()">
             <tr>
-                <td><input data-bind="text:naam" type="text" /></td>
+                <td><input data-bind="value:naam, valueUpdate:'keyup'" type="text" /></td>
                 <td><select data-bind="value:dag, options:viewModel.dagen"></select></td>
                 <td><select data-bind="value:maand, options:viewModel.maanden"></select></td>
-                <td><span data-bind="text: viewModel.jarig(dag, maand)"></span></td>
+                <td><span data-bind="text: viewModel.jarig(dag(), maand()) ? 'Ja' : 'Neen'"></span></td>
             </tr>
         </tbody>
     </table>
     <button data-bind="click: toevoegen">Toevoegen</button>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
-    <script src="frituur.js"></script>
+    <script src="verjaardagen.js"></script>
 </body>
 </html>
