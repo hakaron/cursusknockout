@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Personeel</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Personeel</h1>
+    <div data-bind="template:template()"></div>
+    <script id="personeel" type="text/html">
+        <ul data-bind="foreach:personeel">
+            <li>
+                <a href="#" data-bind="click:$root.detail">
+                    <span data-bind="text: voornaam + ' ' + familienaam"></span>
+                </a>
+            </li>
+        </ul>
+    </script>
+    <script id="detail" type="text/html">
+        <div data-bind="with:gekozen()">
+            <h2 data-bind="text: voornaam + ' ' + familienaam"></h2>
+            <dl>
+                <dd>Nummer</dd>
+                <dt data-bind="text:nummer"></dt>
+                <dd>wedde</dd>
+                <dt data-bind="text:wedde"></dt>
+                <dd>Job</dd>
+                <dt data-bind="text:job"></dt>
+            </dl>
+        </div>
+        <a href="#" data-bind="click:toonPersoneel">Terug naar lijst</a>
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="personeel.js"></script>
+</body>
+</html>
