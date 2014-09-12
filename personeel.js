@@ -1,33 +1,47 @@
 ﻿var viewModel = {
-    personeel: ko.observableArray(),
     gekozen: ko.observable(),
     template: ko.observable()
 };
 Sammy(function () {
     this.get("#personeel/:nummer", function () {
         var nummer = parseInt(this.params["nummer"]);
-        vulPersoneel();
-        vulDetail(nummer);
-        viewModel.template("detail")
+        var request = new XMLHttpRequest();
+        if (viewModel.personeel === undefined) {
+            request.open("GET", "personeel.json", true);
+            request.onload = function () {
+                if (request.status === 200) {
+                    viewModel.personeel = JSON.parse(request.responseText);
+                    vulDetail(nummer);
+                    viewModel.template("detail");
+                    ko.applyBindings(viewModel);
+                }
+            }
+            request.send();
+        } else {
+            vulDetail(nummer);
+            viewModel.template("detail");
+        }
     });
     this.get("", function () {
-        vulPersoneel();
-        viewModel.template("personeel");
+        if (viewModel.personeel === undefined) {
+            var request = new XMLHttpRequest();
+            request.open("GET", "personeel.json", true);
+            request.onload = function () {
+                if (request.status === 200) {
+                    viewModel.personeel = JSON.parse(request.responseText);
+                    viewModel.template("personeel");
+                    ko.applyBindings(viewModel);
+                }
+            }
+            request.send();
+        } else {
+            viewModel.template("personeel");
+        }
     });
 }).run();
-function vulPersoneel() {
-    var request = new XMLHttpRequest();
-    request.open("GET", "personeel.json", true);
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            viewModel.personeel(JSON.parse(request.responseText));
-        }
-    }
-    request.send();
-}
 function vulDetail(nummer) {
     var personeelslid = null;
-    var personeel = viewModel.personeel();
+    var personeel = viewModel.personeel;
     for (var i = 0; i < personeel.length; i++) {
         if (personeel[i].nummer === nummer) {
             personeelslid = personeel[i];
@@ -39,4 +53,3 @@ function vulDetail(nummer) {
     }
     viewModel.gekozen(personeelslid);
 }
-ko.applyBindings(viewModel);
