@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Delen</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Delen</h1>
+    <div>
+        <label>Teller:<input data-bind="value: teller, valueUpdate:'keyup'" type="number" 
+            required /></label>
+    </div>
+    <div>
+        <label>Noemer:<input data-bind="value: noemer, valueUpdate: 'keyup'" type="number" 
+            required min="1" /></label>
+    </div>
+    <h2>Deling: <span data-bind="text:deling()"></span></h2>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="knockout.validation.js"></script>
+    <script src="nl-NL.js"></script>
+    <script src="delen.js"></script>
+</body>
+</html>
