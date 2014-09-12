@@ -1,12 +1,5 @@
 ﻿var viewModel = {
     bestelling: ko.observableArray(),
-    producten: [{ naam: "Kleine friet", prijs: 1.75 },
-                { naam: "Medium friet", prijs: 2.15 },
-                { naam: "Grote friet", prijs: 2.5 },
-                { naam: "Mayonaise", prijs: 0.65 },
-                { naam: "Kippenboutjes", prijs: 3.25 },
-                { naam: "Stoofvlees", prijs: 4.35 }
-               ],
     toevoegen: function () {
         this.bestelling.push({
             product: ko.observable({
@@ -30,4 +23,12 @@
         return totaal;
     }
 };
-ko.applyBindings(viewModel);
+var request = new XMLHttpRequest();
+request.open("GET", "producten.json", true);
+request.onload = function () {
+    if (this.status === 200) {
+        viewModel.producten = JSON.parse(this.responseText);
+        ko.applyBindings(viewModel);
+    }
+}
+request.send();

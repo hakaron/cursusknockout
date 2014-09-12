@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Muziek</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <h1>Muziek</h1>
+    <h2>Genres</h2>
+    <ul data-bind="foreach:genres">
+        <li><a href="#" data-bind="text:naam, click:$root.kiesGenre"></a></li>
+    </ul>
+    <h2 data-bind="with:genre()"><span data-bind="text:naam"></span></h2>
+    <ul data-bind="foreach:artiesten">
+        <li data-bind="text:$data"></li>
+    </ul>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
+    </script>
+    <script src="muziek.js"></script>
+</body>
+</html>
