@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Hoofdzetel</h1>
-    <a href="#" data-bind="click:adres">Adres</a>
-    <a href="#" data-bind="click:foto">Foto</a>
+    <a href="#adres">Adres</a>
+    <a href="#foto">Foto</a>
     <div data-bind="template:template()"></div>
     <script id="adres" type="text/html">
         <h2>Adres</h2>
@@ -29,6 +29,8 @@
     </script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js">
     </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js"></script>
     <script src="hoofdzetel.js"></script>
 </body>
 </html>
